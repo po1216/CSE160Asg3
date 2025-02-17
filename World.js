@@ -656,19 +656,41 @@ function drawHouse() {
     roofX += 1;
   }
   //Fence
-  for(x = 0; x < 18; x++) {
-    for(y = 0; y < 22; y++) {
-      if(x == 0 || x == 17) {
-        var wall = new Cube();
-        wall.textureNum = [3, 3];
-        wall.matrix.translate(y - 7, -0.75, x - 7);
-        wall.renderFast();
-      } else {
-        if (y == 0 || y == 21) {
-          var wall = new Cube();
-          wall.textureNum = [3, 3];
-          wall.matrix.translate(y - 7, -0.75, x - 7);
-          wall.renderFast();
+  for(i = 0; i < 3; i++) {
+    for(x = 0; x < 18; x++) {
+      for(y = 0; y < 22; y++) {
+        if(i == 1) {
+          if(x == 0 || x == 17) {
+            if(y % 2 == 0) {
+              var wall = new Cube();
+              wall.textureNum = [3, 3];
+              wall.matrix.translate(y - 7, -0.75 + i, x - 7);
+              wall.renderFast();
+            }
+          } else {
+            if (y == 0 || y == 21) {
+              if(x % 2 == 0) {
+                var wall = new Cube();
+                wall.textureNum = [3, 3];
+                wall.matrix.translate(y - 7, -0.75 + i, x - 7);
+                wall.renderFast();
+              }
+            }
+          }
+        } else {
+          if(x == 0 || x == 17) {
+            var wall = new Cube();
+            wall.textureNum = [3, 3];
+            wall.matrix.translate(y - 7, -0.75 + i, x - 7);
+            wall.renderFast();
+          } else {
+            if (y == 0 || y == 21) {
+              var wall = new Cube();
+              wall.textureNum = [3, 3];
+              wall.matrix.translate(y - 7, -0.75 + i, x - 7);
+              wall.renderFast();
+            }
+          }
         }
       }
     }
