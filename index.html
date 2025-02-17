@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSE160 Assignment 3</title>
+    <link href="https://fonts.cdnfonts.com/css/minecraftia" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body onload="main()">
+    <div class="container">
+      <div class="canvasContainer">
+        Help mama dog find one of her puppies! <br>
+        <b>Click</b> the canvas to begin. <br> <br>
+      
+        <canvas id="webgl" width="700" height="600">
+          Please use a browser that supports "canvas"
+          </canvas>
+      </div>
+      
+      <div class="instructions">
+        <p id = "performance"> Performance indicator </p>
+        <p>Controls</p>
+        <ul>
+          <li>WASD - basic movements (front, back, left, right)</li>
+          <li>QE or mouse - look around</li>
+          <li>Space - jump (go up)</li>
+          <li>Left control - go down</li>
+          <li>Z - look up</li>
+          <li>X - look down</li>
+          <li>Mouse wheel - zoom in or out</li>
+          You can also control the perspective using the slider below.
+          <p>
+            FOV <input type="range" min="21" max="99" value="70" class="slider" id="fovSlide">
+          </p>
+          <br><br>
+          Shift+click the puppy if you found him!
+        </ul>
+      </div>
+        
+      <script src="./lib/webgl-utils.js"></script>
+      <script src="./lib/webgl-debug.js"></script>
+      <script src="./lib/cuon-utils.js"></script>
+      <script src="./lib/cuon-matrix-cse160.js"></script>
+      <script src="World.js"></script>
+      <script src="Triangle.js"></script>
+      <script src="Cube.js"></script>
+      <script src="Camera.js"></script>
+    </div>
+  </body>
+</html>
